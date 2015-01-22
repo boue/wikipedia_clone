@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :find_article, only: [:show]
   
   def index
 
@@ -24,6 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def find_article
+    @article = Article.find(params[:id])
   end
 
 end
